@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+   <link href="style.css" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+   <script src="main.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+   <title>HR Dashboard</title>
+</head>
+
+<body>
+   <section class="main-wrapper">
+      <div class="side-nav contract" onmouseenter="expand()" id="sideBar" onmouseleave="contract()">
+         <div class="nav-header">
+            <div class="logo">
+               <p>A</p>
+            </div>
+            <div class="company-name">
+               <p>Company Name</p>
+            </div>
+         </div>
+
+         <div class="nav-content">
+            <div class="nav-element active">
+               <i class="bi bi-grid-fill"></i>
+               <p>Dashboard</p>
+            </div>
+
+            <div class="nav-element">
+               <i class="bi bi-journal-text"></i>
+               <p>Employees</p>
+            </div>
+
+
+            <div class="nav-element">
+               <i class="bi bi-calendar3"></i>
+               <p>Attendance</p>
+            </div>
+
+
+            <div class="nav-element">
+               <i class="bi bi-calendar-check"></i>
+               <p>Payroll</p>
+            </div>
+
+            <div class="nav-element">
+               <i class="bi bi-envelope"></i>
+               <p>Transactions</p>
+            </div>
+         </div>
+      </div>
+      <div class="main-area" id="mainArea">
+         <!-- Header start -->
+         <section class="header">
+            <div class="header-title">
+               <p>Dashboard</p>
+            </div>
+            <div class="header-detail">
+               <div class="notification-wrapper">
+                  <img src="img/bell.svg">
+                  <span class="badge">1</span>
+               </div>
+
+               <div class="profile-area">
+                  <div class="avatar">
+                     H
+                  </div>
+                  <div class="profile-name">HR Name</div>
+                  <img src="img/down-chevron.svg" width="16px">
+               </div>
+            </div>
+         </section>
+         <!-- Header close -->
+         <!-- Detail area start -->
+         <section class="detail-area">
+            <div class="row">
+               <div class="col-lg-7">
+                  <div class="card intro">
+                     <h3 class="mb-4">Hey Mona Lisha!</h3>
+                     <p class="mb-4">The last attendance data was uploaded 5 days back. <br>
+                        It's time to upload the latest attendance data.</p>
+                     <a href="#">Upload now</a>
+                     <img src="img/illustration.svg" class="intro-icon">
+                  </div>
+                  <br>
+                  <br>
+                  <h3 class="sub-heading mb-4">
+                     Quick Stats
+                  </h3>
+
+                  <div class="row stats-wrapper">
+                     <div class="col-md-4 mb-sm-20">
+                        <div class="card stats">
+                           <p>Total Employees</p>
+                           <h4 class="mt-3">107</h4>
+                        </div>
+                     </div>
+                     <div class="col-md-4 mb-sm-20">
+                        <div class="card stats">
+                           <p>Total withdrawal Requests</p>
+                           <h4 class="mt-3">214</h4>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="card stats">
+                           <p>Total withdrawal Value</p>
+                           <h4 class="mt-3">₹9,45,489</h4>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="card salary">
+                     <div class="d-flex justify-content-between align-items-center">
+                        <h3 class="sub-heading">
+                           Salary credits
+                        </h3>
+                        <button type="button" class="btn btn-secondary primary-btn btn-sm">August</button>
+                     </div>
+
+                     <div class="salary-detail">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="row">
+                                 <div class="col-8">
+                                    <div class="salary-element">
+                                       <h4>100</h4>
+                                       <p>Total salary withdrawal requests</p>
+                                    </div>
+                                 </div>
+                              </div>
+
+                              <div class="row">
+                                 <div class="col-6">
+                                    <div class="salary-element small">
+                                       <h4>60</h4>
+                                       <p>Total number of request completed</p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6">
+                                    <div class="salary-element small">
+                                       <h4>37</h4>
+                                       <p>Total number of request in progress</p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6">
+                                    <div class="salary-element small">
+                                       <h4>3</h4>
+                                       <p>Total number of request rejected</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="chart-box">
+                                 <canvas id="myChart"></canvas>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+               <div class="col-lg-5 right-area">
+                  <div class="card">
+                     <div class="d-flex justify-content-between align-items-center mb-4 mt-3">
+                        <h3 class="sub-heading">
+                           Recent Activities
+                        </h3>
+                        <button type="button" class="btn btn-light clear-btn btn-sm">View All</button>
+                     </div>
+
+                     <div class="list d-flex align-items-start justify-content-between py-3">
+                        <div>
+                           <p class="list-title">Uploaded attendance sheet</p>
+                           <p class="mute light">Uploaded by John Doe</p>
+                        </div>
+                        <div class="date">
+                           <p class="mute light">20 Sep, 2020</p>
+                        </div>
+                     </div>
+
+                     <div class="list d-flex align-items-start justify-content-between py-3">
+                        <div>
+                           <p class="list-title">Uploaded payroll</p>
+                           <p class="mute light">Uploaded by John Doe</p>
+                        </div>
+                        <div class="date">
+                           <p class="mute light">20 Sep, 2020</p>
+                        </div>
+                     </div>
+
+                     <div class="list d-flex align-items-start justify-content-between py-3">
+                        <div>
+                           <p class="list-title">Reviewed applications</p>
+                           <p class="mute light">Uploaded by John Doe</p>
+                        </div>
+                        <div class="date">
+                           <p class="mute light">20 Sep, 2020</p>
+                        </div>
+                     </div>
+                     <div class="list d-flex align-items-start justify-content-between py-3 mb-2">
+                        <div>
+                           <p class="list-title">Uploaded employee details</p>
+                           <p class="mute light">Uploaded by John Doe</p>
+                        </div>
+                        <div class="date">
+                           <p class="mute light">20 Sep, 2020</p>
+                        </div>
+                     </div>
+                  </div>
+
+                  <br>
+                  <br>
+
+                  <div class="card">
+                     <div class="d-flex justify-content-between align-items-center mb-4 mt-4">
+                        <h3 class="sub-heading">
+                           To Do List
+                        </h3>
+                        <button type="button" class="btn btn-light clear-btn btn-sm">View All</button>
+                     </div>
+
+                     <div class="list d-flex align-items-start justify-content-between py-3">
+                        <div>
+                           <p class="list-title">Uploaded employee details</p>
+                           <p class="mute light">Uploaded by John Doe</p>
+                        </div>
+                        <div class="date">
+                           <p class="mute light">20 Sep, 2020</p>
+                        </div>
+                     </div>
+
+                     <div class="list d-flex align-items-start justify-content-between py-3">
+                        <div>
+                           <p class="list-title">Uploaded employee details</p>
+                           <p class="mute light">Uploaded by John Doe</p>
+                        </div>
+                        <div class="date">
+                           <p class="mute light">20 Sep, 2020</p>
+                        </div>
+                     </div>
+
+                     <div class="list d-flex align-items-start justify-content-between py-3">
+                        <div>
+                           <p class="list-title">Uploaded employee details</p>
+                           <p class="mute light">Uploaded by John Doe</p>
+                        </div>
+                        <div class="date">
+                           <p class="mute light">20 Sep, 2020</p>
+                        </div>
+                     </div>
+
+                     <div class="list d-flex align-items-start justify-content-between py-3">
+                        <div>
+                           <p class="list-title">Uploaded employee details</p>
+                           <p class="mute light">Uploaded by John Doe</p>
+                        </div>
+                        <div class="date">
+                           <p class="mute light">20 Sep, 2020</p>
+                        </div>
+                     </div>
+                     <div class="list d-flex align-items-start justify-content-between py-3">
+                        <div>
+                           <p class="list-title">Uploaded employee details</p>
+                           <p class="mute light">Uploaded by John Doe</p>
+                        </div>
+                        <div class="date">
+                           <p class="mute light">20 Sep, 2020</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- Detail area close -->
+      </div>
+   </section>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

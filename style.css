@@ -1,0 +1,381 @@
+p {
+  margin: 0px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+.main-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+ .side-nav.contract {
+  height: 100%;
+  background: #ffffff;
+  width: 100px;
+  padding: 1.3rem 2rem;
+}
+
+.side-nav.expand {
+  height: 100%;
+  background: #ffffff;
+  width: 25rem;
+  position: absolute;
+  left: 0px;
+  z-index: 100;
+  box-shadow: 0px 0px 25px gainsboro;
+  padding: 1.3rem 0rem;
+}
+
+.main-area {
+  background: #f3f3fa;
+  height: 100%;
+  width: calc(100% - 100px);
+}
+.add-left-margin {
+  margin-left: 100px;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.nav-header .logo {
+  background: #2a9eda;
+  color: #ffffff;
+  font-weight: 900;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.nav-header .company-name {
+  color: #204866;
+  padding-left: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.nav-content {
+  padding: 5rem 0rem;
+}
+
+.nav-element {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.expand .nav-element {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1rem 1.5rem 4rem;
+  justify-content: flex-start;
+}
+
+.nav-element img {
+  width: 1.3rem;
+  color: #bdbdbd;
+}
+
+.nav-element i{
+ font-size: 1.8rem;
+ color: #bdbdbd;
+}
+
+.nav-element p {
+  margin-left: 1.4rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #bdbdbd;
+  transition: 0.5s;
+}
+
+.nav-element.active p {
+  color: #204866;
+}
+
+.nav-element.active i{
+  color: #204866;
+ }
+
+.nav-element:hover p {
+ color: #204866;
+}
+
+.nav-element:hover i {
+  color: #204866;
+ }
+
+.header {
+  background: #2a9eda;
+  padding: 2rem 6rem 2rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-title p {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.notification-wrapper {
+  position: relative;
+}
+
+.notification-wrapper .badge {
+  position: absolute;
+  top: -4px;
+  right: -10px;
+  background: #000000;
+  color: #ffffff;
+  font-size: 1rem;
+  border-radius: 50%;
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+.notification-wrapper img {
+  width: 2.6rem;
+}
+
+.header-detail, .profile-area {
+  display: flex;
+  align-items: center;
+}
+.profile-area {
+  margin-left: 50px;
+}
+
+.profile-name {
+  color: #ffffff;
+  font-size: 1.3rem;
+  padding: 0px 10px;
+}
+
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.detail-area {
+  padding: 3rem 4rem;
+  height: calc(100% - 7rem);
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.card {
+  border-radius: 8px;
+  padding: 1.8rem 2.5rem;
+  width: 100%;
+  border: none;
+  transition: 0.5s;
+}
+.intro {
+  background: #2a9eda;
+  color: #ffffff;
+  position: relative;
+}
+
+.intro-icon {
+  position: absolute;
+  right: 0px;
+  width: 227px;
+  bottom: 0px;
+}
+
+.intro h3{
+  font-weight: 600;
+}
+.intro p{
+  font-size: 1.2rem;
+}
+
+.intro a{
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+
+.sub-heading {
+  font-weight: 600;
+  color: #204866;
+}
+
+.stats p {
+  color: #2a9eda;
+  font-size: 9px;
+}
+
+.stats h4 {
+  color: #204866;
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+.stats-wrapper .stats:nth-child(2) {
+ margin: 0px 20px;
+}
+
+.primary-btn {
+  border-radius: 15px;
+  background: #f5f5f5;
+  border: none;
+  padding: 10px 44px;
+  color: #929292;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.clear-btn {
+  border-radius: 15px;
+  background: #ffffff;
+  border: none;
+  padding: 5px;
+  color: #2a9eda;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.salary-element{
+  padding: 20px 0px;
+}
+
+.salary-element.small{
+  padding: 14px 0px;
+}
+
+.salary-element h4 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #204866;
+}
+.salary-element p {
+  font-size: 1.2rem;
+}
+
+.salary-element.small h4 {
+  font-size: 2.1rem;
+}
+.salary-element.small p {
+  font-size: 1rem;
+}
+
+.chart-box {
+  width: 100%;
+  height: 250px;
+  border-radius: 20px;
+  background: #f5f5f5;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.light {
+  color: #ababab;
+}
+.list-title {
+  font-size: 1.2rem;
+}
+
+.contract .company-name {
+  display: none;
+}
+
+.contract .nav-element p {
+  display: none;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 25px gainsboro;
+}
+
+.right-area {
+  padding-left: 30px;
+}
+
+@media only screen and (max-width: 998px) {
+
+  .primary-btn {
+    background: #ffffff;
+    padding: 5px 10px;
+    color: #2a9eda;
+  }
+
+  .stats-wrapper .stats:nth-child(2) {
+    margin: 0px 0px 20px 0px;
+   }
+
+   .mb-sm-20 {
+     margin-bottom: 20px;
+   }
+
+   .card.salary {
+    margin-bottom: 20px;
+  }
+  .right-area {
+    padding-left: 0px;
+  }
+  
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  html {
+    font-size: 8px;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .header {
+    padding: 2rem;
+ }
+
+ .profile-area {
+  margin-left: 15px;
+ }
+
+ .detail-area {
+   padding: 3rem 2rem;
+ }
+
+ .intro-icon {
+   display: none;
+ }
+}
